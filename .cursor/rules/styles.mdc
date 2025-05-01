@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[title]: # (Styling Guidelines)
+Use Tailwind CSS as base.
+
+Design Tokens:
+- Primary: Green tones
+- Accent: Soft orange or yellow (call-to-action)
+
+Use semantic class names when needed.
+Stick to consistent spacing (e.g., `p-4`, `gap-6`).
+Minimize custom CSS.
+Follow Astra UI conventions.

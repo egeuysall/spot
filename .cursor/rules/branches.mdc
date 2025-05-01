@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[title]: # (Branch Naming Conventions)
+
+Use kebab-case naming with prefixes:
+- feature/<name>
+- fix/<name>
+- refactor/<name>
+- chore/<name>
+Start all branches from `main`.
+One branch per task or feature.
+Examples:
+- feature/gpt-filtering
+- fix/api-timeout

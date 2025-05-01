@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[title]: # (Hooks Guidelines)
+
+Place all custom hooks in `hooks/`.
+
+File naming: `useX.ts` (e.g., `useFilteredEvents.ts`)
+
+Each hook should do one thing only.
+Always prefix with `use`.
+Examples:
+- useFilteredEvents
+- useDebouncedInput
+- useFetchWithGPT

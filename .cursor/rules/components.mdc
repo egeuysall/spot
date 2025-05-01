@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[title]: # (Component Standards)
+
+Use one folder per component:
+components/
+  EventCard/
+    index.tsx
+    types.ts
+    styles.ts (if needed)
+Keep components reusable and small.
+Prefer server components where possible.
+Use Astra UI as base.
+Use Lucide for icons.
