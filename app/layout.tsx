@@ -9,6 +9,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 // Fonts
 import { dmSans, dmMono, merriweather } from "@/lib/fonts";
 
+// Dates
+import { priceValidUntilString, currentDate } from "@/utils/date";
+
 // Internal Components
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
@@ -105,14 +108,6 @@ export default async function RootLayout({
 }) {
   const product = await getProduct();
 
-  // Define date for product schema
-  const priceValidUntilDate = new Date();
-  priceValidUntilDate.setFullYear(priceValidUntilDate.getFullYear() + 1);
-  const priceValidUntilString = priceValidUntilDate.toISOString().split("T")[0];
-
-  // Format current date for schema (ISO format)
-  const currentDate = new Date().toISOString();
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -187,13 +182,13 @@ export default async function RootLayout({
       <body className="w-full h-full flex-center">
         <LayoutWrapper jsonLdData={jsonLd}>
           <main className="w-[90vw] md:w-[92.5vw] lg:w-[95vw]">
-            <div className="mb-32">
+            <div className="mb-32 w-full">
               <Header />
             </div>
             <Analytics />
             {children}
             <SpeedInsights />
-            <aside className="w-full flex-center mt-24">
+            <aside className="w-full mt-24">
               <Footer />
             </aside>
           </main>
