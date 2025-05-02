@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[title]: # (Commit Conventions)
+
+Use conventional commits with the following types:
+- feat: for new features
+- fix: for bug fixes
+- chore: for maintenance tasks
+- refactor: for code improvements without changing behavior
+- style: for formatting or styling (no logic changes)
+- docs: for documentation updates
+- test: for adding or updating tests
+Keep messages concise, lowercase, imperative, and under 72 characters.
+Examples:
+- feat: add dynamic route for event pages
+- fix: correct missing location in event card
