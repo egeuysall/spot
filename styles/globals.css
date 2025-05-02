@@ -89,6 +89,21 @@
     @apply tracking-tight text-primary-500 lg:w-3/4;
     font-family: var(--font-dm-sans);
   }
+
+  .form-label {
+    @apply font-bold text-base md:text-lg;
+    @apply tracking-tight text-primary-500;
+  }
+
+  .form-input {
+    @apply text-sm md:text-base tracking-tight w-full flex flex-col py-2.5 px-3.5 rounded-lg  placeholder:text-primary-500/50 text-primary-500;
+    @apply outline-none;
+  }
+
+  .text-area {
+    @apply text-sm md:text-base tracking-tight w-full flex flex-col py-2.5 px-3.5 rounded-lg  placeholder:text-primary-500/50 h-24;
+    @apply outline-none;
+  }
 }
 
 /* Components Layer */
@@ -101,11 +116,6 @@
   .list-item {
     @apply text-base;
     @apply tracking-tight text-black;
-  }
-
-  .button {
-    @apply bg-accent-100 shadow-none;
-    @apply text-base text-secondary-200 transition duration-200 hover:opacity-75;
   }
 }
 

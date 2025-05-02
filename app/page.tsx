@@ -24,9 +24,7 @@ const Home: React.FC = () => {
         </p>
         <div className="flex gap-4">
           <Link href="/get-started" className="flex w-full md:w-auto">
-            <Button className="w-full button py-5.5 px-3.5 text-base font-bold">
-              Get started
-            </Button>
+            <Button>Get started</Button>
           </Link>
         </div>
       </section>
@@ -47,7 +45,7 @@ const Home: React.FC = () => {
         <StartNewsletter />
       </section>
       <section className="w-full flex flex-col gap-4">
-        <h2>React out</h2>
+        <h2>Reach out</h2>
         <ContactForm />
       </section>
     </main>
