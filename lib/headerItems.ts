@@ -3,23 +3,18 @@ import { headerItem } from "@/types/headerTypes";
 const headerItems: headerItem[] = [
   {
     id: 1,
-    title: "Documentation",
+    title: "Home",
+    link: "/",
   },
   {
     id: 2,
-    title: "Components",
+    title: "Discover",
+    link: "/discover",
   },
   {
     id: 3,
-    title: "Discover",
-  },
-  {
-    id: 4,
-    title: "Contact",
-  },
-  {
-    id: 5,
-    title: "Links",
+    title: "Saved",
+    link: "saved",
   },
 ];
 
