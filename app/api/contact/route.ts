@@ -363,7 +363,7 @@ export async function POST(request: Request) {
     </div>
 </body>
 </html>`;
-
+    // TODO: Rebuild HTML template
     // Create plain text version for email clients that don't support HTML
     const textContent = `
 New Astra UI Submission

@@ -78,7 +78,6 @@ export default function StartNewsletter() {
           className: "toaster-element",
         }}
       />
-
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="lg:grid lg:grid-cols-2 lg:gap-4 space-y-4 lg:space-y-0">
