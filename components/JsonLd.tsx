@@ -17,7 +17,7 @@ const JsonLd = ({ jsonLdData }: JsonLdProps) => {
   useEffect(() => {
     // Remove any existing JSON-LD scripts
     const existingScripts = document.querySelectorAll(
-      'script[type="application/ld+json"]'
+      'script[type="application/ld+json"]',
     );
     existingScripts.forEach((script) => script.remove());
 
@@ -28,9 +28,8 @@ const JsonLd = ({ jsonLdData }: JsonLdProps) => {
     document.head.appendChild(script);
 
     return () => {
-      // Find and remove our script on unmount
       const ourScript = document.querySelector(
-        `script[type="application/ld+json"]`
+        `script[type="application/ld+json"]`,
       );
       if (ourScript) document.head.removeChild(ourScript);
     };

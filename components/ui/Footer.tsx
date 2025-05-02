@@ -4,7 +4,7 @@ import { Globe, Github, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const iconSize: number = 24
+  const iconSize: number = 24;
 
   return (
     <footer className="w-full bg-[#ffffff] dark:bg-[#000000] border border-[#f2f2f2] dark:border-[#2e2e2e] rounded-xl py-8 px-6 mt-auto">
@@ -64,7 +64,10 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Website"
                 >
-                  <Globe size={iconSize} className="text-black dark:text-white" />
+                  <Globe
+                    size={iconSize}
+                    className="text-black dark:text-white"
+                  />
                 </Link>
                 <Link
                   href="https://github.com/astraui/astraui"
@@ -72,7 +75,10 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <Github size={iconSize} className="text-black dark:text-white" />
+                  <Github
+                    size={iconSize}
+                    className="text-black dark:text-white"
+                  />
                 </Link>
                 <Link
                   href="mailto:hello@egeuysal.com"
@@ -80,7 +86,10 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Email"
                 >
-                  <Mail size={iconSize} className="text-black dark:text-white" />
+                  <Mail
+                    size={iconSize}
+                    className="text-black dark:text-white"
+                  />
                 </Link>
               </div>
             </address>
