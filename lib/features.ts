@@ -15,27 +15,27 @@ export const features: FeaturesProps[] = [
     icon: aiIcon,
     featureName: "AI-Powered Suggestions",
     featureDesc:
-      "Smarter event matching that adapts to your mood, style, time, and city—without extra searching.",
+      "Matches your vibe, style, and time using Spot's smart, AI-driven brain.",
   },
   {
     id: 2,
     icon: locationIcon,
     featureName: "Hyper-Local Filtering",
     featureDesc:
-      "Instantly find things to do nearby with real-world filters for time, weather, and location.",
+      "Filters nearby events by time, weather, and real-world conditions fast.",
   },
   {
     id: 3,
     icon: sparklesIcon,
     featureName: "Smart Event Summaries",
     featureDesc:
-      "Every event auto-transformed with tags, clarity, and spark using Spot's GPT-powered brain.",
+      "Each event gets instant clarity with tags using GPT-powered insights.",
   },
   {
     id: 4,
     icon: mobileIcon,
     featureName: "Beautiful Mobile UI",
     featureDesc:
-      "Designed with Tailwind and Astra UI for a native, smooth, gorgeous feel on all devices.",
+      "Built with Astra UI for a fast, smooth, and stunning native app feel.",
   },
 ];

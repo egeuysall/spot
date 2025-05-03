@@ -80,42 +80,23 @@ export async function POST(request: Request) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <title>Astra UI Submission</title>
+    <title>Spot Contact Submission</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@700&display=swap');
+
         :root {
             color-scheme: light dark;
         }
         
-        @font-face {
-            font-family: 'Geist';
-            font-style: normal;
-            font-weight: 700;
-            src: url(https://fonts.cdnfonts.com/css/geist);
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            src: url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
-        }
-        
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            src: url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
-        }
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'DM Sans', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            color: #000000;
-            background-color: white;
+            color: #0284C7;
+            background-color: #E0F2FE;
             -webkit-font-smoothing: antialiased;
             display: flex;
             justify-content: center;
@@ -123,15 +104,37 @@ export async function POST(request: Request) {
         }
         
         h1, h2, h3, .info-label {
-            font-family: 'Geist', Verdana, Geneva, sans-serif;
+            font-family: 'Merriweather', serif;
             letter-spacing: -0.02em;
+            color: #38BDF8;
         }
         
         /* Dark mode styles */
         @media (prefers-color-scheme: dark) {
             body {
-                color: #FFFFFF;
+                color: #38BDF8;
                 background-color: #121212;
+            }
+            .email-container {
+                background-color: #0E3A60;
+            }
+            h1, h2, h3, .info-label {
+                color: #38BDF8;
+            }
+            .info-value {
+                background-color: #1E4E8C;
+                color: #38BDF8;
+            }
+            .email-footer {
+                background-color: #1E4E8C;
+                color: #38BDF8;
+                border-top: 1px solid rgba(56, 189, 248, 0.3);
+            }
+            a {
+                color: #38BDF8;
+            }
+            .email-footer a {
+                color: #7DD3FC;
             }
         }
         
@@ -146,42 +149,21 @@ export async function POST(request: Request) {
         .email-container {
             width: 100%;
             max-width: 100%;
-            background-color: #F5F5F5;
+            background-color: #BAE6FD;
             overflow: hidden;
             border-radius: 12px;
         }
         
-        @media (prefers-color-scheme: dark) {
-            .email-container {
-                background-color: #1e1e1e;
-            }
-        }
-        
         .email-header {
-            background-color: #000000;
+            background-color: #0284C7;
             padding: 28px 24px;
             text-align: center;
             position: relative;
             z-index: 1;
         }
         
-        @media (prefers-color-scheme: dark) {
-            .email-header {
-                background-color: #000000;
-            }
-        }
-        
-        .logo {
-            max-width: 120px;
-            height: auto;
-            margin-bottom: 16px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
         .email-header h1 {
-            color: #FFFFFF;
+            color: #38BDF8;
             margin: 0;
             font-weight: 700;
             font-size: 26px;
@@ -204,13 +186,13 @@ export async function POST(request: Request) {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(245, 245, 245, 0.85);
+            background-color: rgba(186, 230, 253, 0.85);
             z-index: -1;
         }
         
         @media (prefers-color-scheme: dark) {
             .email-content::before {
-                background-color: rgba(30, 30, 30, 0.9);
+                background-color: rgba(30, 78, 140, 0.9);
             }
         }
         
@@ -225,7 +207,6 @@ export async function POST(request: Request) {
         
         .info-label {
             font-weight: 700;
-            color: #000000;
             margin-bottom: 10px;
             display: block;
             font-size: 15px;
@@ -233,28 +214,15 @@ export async function POST(request: Request) {
             letter-spacing: 0.5px;
         }
         
-        @media (prefers-color-scheme: dark) {
-            .info-label {
-                color: #FFFFFF;
-            }
-        }
-        
         .info-value {
             margin: 0;
-            background-color: #E8E8E8;
+            background-color: #BAE6FD;
             padding: 14px 18px;
             border-radius: 8px;
             font-size: 16px;
-            color: #000000;
+            color: #0284C7;
             word-wrap: break-word;
             position: relative;
-        }
-        
-        @media (prefers-color-scheme: dark) {
-            .info-value {
-                background-color: #2c2c2c;
-                color: #FFFFFF;
-            }
         }
         
         .message-value {
@@ -263,47 +231,27 @@ export async function POST(request: Request) {
         }
         
         .email-footer {
-            background-color: #E0E0E0;
+            background-color: #BAE6FD;
             padding: 18px 24px;
             text-align: center;
             font-size: 14px;
-            color: #000000;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #0284C7;
+            border-top: 1px solid rgba(2, 132, 199, 0.1);
             position: relative;
             z-index: 1;
         }
         
-        @media (prefers-color-scheme: dark) {
-            .email-footer {
-                background-color: #2c2c2c;
-                color: #FFFFFF;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
-        }
-        
         a {
-            color: #000000;
+            color: #0284C7;
             text-decoration: none;
             font-weight: normal;
         }
         
-        @media (prefers-color-scheme: dark) {
-            a {
-                color: #FFFFFF;
-            }
-        }
-        
         /* Only footer links should be special */
         .email-footer a {
-            color: #444444;
+            color: #0369A1;
             font-weight: 700;
             transition: all 0.2s ease;
-        }
-        
-        @media (prefers-color-scheme: dark) {
-            .email-footer a {
-                color: #BBBBBB;
-            }
         }
         
         .email-footer a:hover {
@@ -328,7 +276,7 @@ export async function POST(request: Request) {
     <div class="email-wrapper">
         <div class="email-container">
             <div class="email-header">
-                <h1>Astra UI Submission</h1>
+                <h1>Spot Contact Submission</h1>
             </div>
             
             <div class="email-content">
@@ -357,16 +305,15 @@ export async function POST(request: Request) {
             </div>
             
             <div class="email-footer">
-                <p>This message was sent from the contact form on <a href="https://astraui.me">astraui.me</a></p>
+                <p>This message was sent from the contact form on <a href="https://www.spot.egeuysal.com/">spot.egeuysal.com</a></p>
             </div>
         </div>
     </div>
 </body>
 </html>`;
-    // TODO: Rebuild HTML template
     // Create plain text version for email clients that don't support HTML
     const textContent = `
-New Astra UI Submission
+New Spot Contact Submission
 
 From: ${name} ${lastName}
 Email: ${email}
@@ -376,14 +323,14 @@ ${message}
 
 Submitted on: ${formattedDate}
 
-This message was sent from the contact form on astraui.me
+This message was sent from the contact form on spot.egeuysal.com
 `;
 
     // Send email
     const { error } = await resend.emails.send({
-      from: "Astra UI <contact@egeuysal.com>",
+      from: "Spot <contact@egeuysal.com>",
       to: [adminEmail, email],
-      subject: `Astra UI Submission from ${name} ${lastName}`,
+      subject: `Spot Contact Submission`,
       replyTo: email,
       text: textContent,
       html: htmlContent,
