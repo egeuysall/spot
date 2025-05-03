@@ -25,13 +25,13 @@ const Home: React.FC = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Input
-            placeholder="Enter your location"
+            placeholder="Enter your city"
             type="text"
             autoComplete="address-level2"
             className="form-input col-span-1 md:col-span-3"
           />
-          <Link href="/create" className="flex w-full md:col-span-1">
-            <Button className="w-full">Create</Button>
+          <Link href="/try" className="flex w-full md:col-span-1">
+            <Button className="w-full">Try</Button>
           </Link>
         </div>
       </section>

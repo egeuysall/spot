@@ -8,8 +8,8 @@ const headerItems: headerItem[] = [
   },
   {
     id: 2,
-    title: "Create",
-    link: "/create",
+    title: "Try",
+    link: "/try",
   },
   {
     id: 3,

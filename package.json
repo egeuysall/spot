@@ -17,6 +17,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "ldrs": "^1.1.7",
     "lucide-react": "^0.506.0",
     "motion": "^12.9.4",
     "next": "15.3.1",
