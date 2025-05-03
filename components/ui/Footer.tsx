@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <h6 className="footer-text font-bold">Spot</h6>
 
           <div className="flex flex-col gap-1">
-            <p className="footer-text w-full">Design. Build. Empower.</p>
+            <p className="footer-text w-full">Find. Explore. Enjoy.</p>
             <p className="footer-text">&copy; {year} Spot</p>
           </div>
         </div>
