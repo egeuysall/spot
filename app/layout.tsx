@@ -19,10 +19,10 @@ import LayoutWrapper from "@/components/LayoutWrapper";
 
 async function getProduct() {
   return {
-    name: "Astra UI: Design faster, build smarter, shine brighter.",
+    name: "Spot: Find and Discover Local Events You’ll Actually Love, Curated Just for You",
     image: "/og-links.jpg",
     description:
-      "Astra UI is an open-source UI library for Next.js, offering accessible, production-ready components to power your next project with ease. Try it today!",
+      "Discover local events you’ll actually love with Spot. Get personalized recommendations for concerts, meetups, and experiences curated just for you, anytime and anywhere.",
   };
 }
 
@@ -33,33 +33,43 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: {
       default: product.name,
-      template: "%s | Astra UI",
+      template: "%s | Spot",
     },
     description: product.description,
-    metadataBase: new URL("https://www.astraui.me/"),
+    metadataBase: new URL("https://www.spot.egeuysal.com/"),
     authors: [{ name: "Ege Uysal" }],
     keywords: [
-      "React UI library",
-      "React component library",
-      "Astra UI components",
-      "Astra UI React",
-      "React design system",
-      "UI components for React",
-      "Astra UI kit",
-      "React UI toolkit",
-      "modern React components",
-      "lightweight React UI library",
+      "local event suggestions",
+      "AI-powered event discovery",
+      "personalized event suggestions",
+      "activities near me",
+      "free activities near me",
+      "event search app",
+      "top local events finder",
+      "event recommendations by location",
+      "Spot event discovery app",
+      "find events by category",
+      "local event alerts",
+      "event planner app",
+      "personalized event calendar",
+      "events near me today",
+      "event discovery app USA",
+      "events based on interests",
+      "find things to do near you",
+      "unique local events",
+      "top events near me",
+      "local happenings near me",
     ],
     openGraph: {
       title: product.name,
       description: product.description,
-      url: "https://www.astraui.me/",
+      url: "https://www.spot.egeuysal.com/",
       images: [
         {
           url: product.image,
           width: 1200,
           height: 630,
-          alt: "Astra UI Logo",
+          alt: "Spot Logo",
         },
       ],
       type: "website",
@@ -68,11 +78,11 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      site: "@astraui",
+      site: "@egecreates",
       title: product.name,
       description: product.description,
       images: [product.image],
-      creator: "@astraui",
+      creator: "@egeuysall",
     },
     icons: {
       icon: [
@@ -88,9 +98,9 @@ export async function generateMetadata(): Promise<Metadata> {
       follow: true,
     },
     alternates: {
-      canonical: "https://www.astraui.me/",
+      canonical: "https://www.spot.egeuysal.com/",
     },
-    applicationName: "Astra UI",
+    applicationName: "Spot",
     appleWebApp: {
       capable: true,
       statusBarStyle: "black-translucent",
@@ -112,16 +122,16 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    image: `https://www.astraui.me${product.image}`,
+    image: `https://www.spot.egeuysal.com/${product.image}`,
     description: product.description,
-    url: "https://www.astraui.me/",
+    url: "https://www.spot.egeuysal.com/",
     dateModified: currentDate,
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      url: "https://www.astraui.me/",
+      url: "https://www.spot.egeuysal.com/",
       priceValidUntil: priceValidUntilString,
       shippingDetails: {
         "@type": "OfferShippingDetails",

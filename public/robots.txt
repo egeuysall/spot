@@ -1,0 +1,46 @@
+# robots.txt for www.spot.egeuysal.com
+# Last updated: 2025-05-03
+
+# Allow all robots complete access by default
+User-agent: *
+Allow: /
+
+# Disallow access to admin areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /dashboard/
+Disallow: /cpanel/
+
+# Disallow access to sensitive directories
+Disallow: /private/
+Disallow: /includes/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Disallow access to specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.sql$
+Disallow: /*.yml$
+Disallow: /*.config$
+Disallow: /*.env$
+Disallow: /*.log$
+Disallow: /*.md$  # Markdown files are often for documentation purposes
+
+# Block specific bot examples
+User-agent: GPTBot
+Disallow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+# Crawl-delay suggestion for Slurp
+User-agent: Slurp
+Crawl-delay: 5
+
+# Sitemap declarations
+Sitemap: https://www.spot.egeuysal.com/sitemap.xml
+
+# Host directive
+Host: www.spot.egeuysal.com

@@ -3,6 +3,7 @@ import React from "react";
 // UI Components
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/Card";
+import { Input } from "@/components/ui/input";
 
 // Next.js components
 import Link from "next/link";
@@ -22,9 +23,15 @@ const Home: React.FC = () => {
         <p>
           AI-powered event recommendations based on your vibe and interests.
         </p>
-        <div className="flex gap-4">
-          <Link href="/get-started" className="flex w-full md:w-auto">
-            <Button>Get started</Button>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <Input
+            placeholder="Enter your location"
+            type="text"
+            autoComplete="address-level2"
+            className="form-input col-span-1 md:col-span-3"
+          />
+          <Link href="/create" className="flex w-full md:col-span-1">
+            <Button className="w-full">Create</Button>
           </Link>
         </div>
       </section>

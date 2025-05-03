@@ -13,7 +13,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={`text-base bg-accent-100 text-secondary-200 transition duration-200 hover:opacity-75 font-bold py-2.5 px-3.5 rounded-lg inline-flex items-center justify-center gap-2 w-full md:w-auto ${className}`}
+      className={`text-base bg-accent-100 text-secondary-200 transition duration-200 hover:opacity-75 font-bold py-2.5 px-3.5 rounded-lg inline-flex items-center justify-center gap-2 w-full ${className}`}
       {...props}
     />
   );
