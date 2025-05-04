@@ -80,7 +80,7 @@ Spot is built with a focus on simplicity and performance. To start contributing,
 
 To run tests:
 ```bash
-pnpm test
+pnpm lint
 ```
 
 ### Roadmap
@@ -91,7 +91,7 @@ pnpm test
 
 ## License
 
-Spot is open-source and released under the [MIT License](LICENSE).
+Spot is open-source and released under the [Apache 2.0 License](LICENSE).
 
 ### Contact
 
