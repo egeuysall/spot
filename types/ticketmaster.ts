@@ -7,8 +7,11 @@ export type TicketmasterEvent = {
   time: string,
   segment: string,
   genre: string,
-  priceMin: number | null,
-  priceMax: number | null,
+  priceRanges: Array<{
+    min: number | null,
+    max: number | null,
+    currency: string
+  }>,
   city: string,
   venue: string
 }
