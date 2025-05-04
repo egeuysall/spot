@@ -33,7 +33,7 @@ const Discover: React.FC = () => {
   return (
     <main className="flex flex-col gap-20">
       <section className="w-full flex flex-col gap-4">
-        <h2>Upcoming Events</h2>
+        <h2>Discover Events</h2>
         <aside className="grid grid-cols-1 md:grid-cols-5 gap-2">
           <Input
             placeholder="Enter country"

@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         <StartNewsletter />
       </section>
       <section className="w-full flex flex-col gap-4">
-        <h2>Reach out</h2>
+        <h2 id="contact">Reach out</h2>
         <ContactForm />
       </section>
     </main>
