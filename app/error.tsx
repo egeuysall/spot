@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +12,7 @@ export default function ServerError() {
         width={64}
         height={64}
         alt="Logo"
-        src="/logos/header-logo.svg"
+        src="/logos/header-icon.svg"
         className="mx-auto"
       />
       <h2>Oops, something went wrong on our end.</h2>

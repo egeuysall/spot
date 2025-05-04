@@ -37,7 +37,7 @@ const Home: React.FC = () => {
       </section>
       <section className="w-full flex flex-col gap-4">
         <h2>Tailored for You</h2>
-        <aside className="grid md:grid-cols-2 gap-4 mt-4">
+        <aside className="grid md:grid-cols-2 gap-4">
           {features.map((feature) => {
             return (
               <div className="col-span-2 md:col-span-1 w-full" key={feature.id}>

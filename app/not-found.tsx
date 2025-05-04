@@ -10,7 +10,7 @@ export default function NotFound() {
         width={64}
         height={64}
         alt="Page not found icon"
-        src="/logos/header-logo.svg"
+        src="/logos/header-icon.svg"
         className="mx-auto"
       />
       <h2>Sorry, we couldn&apos;t find that page.</h2>
