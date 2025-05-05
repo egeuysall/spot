@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "noEmit": true,
     "jsx": "preserve",
-    "target": "ES2017",
+    "target": "ES2018",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,

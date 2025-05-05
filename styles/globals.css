@@ -46,7 +46,7 @@
   /* Code typography */
   code,
   pre {
-    font-family: var(--font-dm-mono);
+    font-family: var(--font-dm-mono) !important;
     @apply text-base md:text-lg;
     @apply text-primary-500 lg:w-3/4;
   }

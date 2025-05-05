@@ -1,11 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  dracula,
-  oneLight,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+import * as shiki from "shiki";
 import { LucideCode, LucideCheck, LucideCopy, LucideFile } from "lucide-react";
 import { cn } from "../../utils/functions";
 import { iconSize } from "@/utils/design";
@@ -53,22 +49,47 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   const [copied, setCopied] = useState(false);
   const [isClient, setIsClient] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [highlightedCode, setHighlightedCode] = useState("");
 
   useEffect(() => {
     setIsClient(true);
-    // Check if dark mode is enabled
-    setIsDarkMode(
-      window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches,
-    );
-
-    // Listen for changes in color scheme
+    const updateMode = () => {
+      setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    };
+    updateMode();
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const listener = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    mediaQuery.addEventListener("change", listener);
-
-    return () => mediaQuery.removeEventListener("change", listener);
+    mediaQuery.addEventListener("change", updateMode);
+    return () => mediaQuery.removeEventListener("change", updateMode);
   }, []);
+
+  useEffect(() => {
+    const loadHighlighter = async () => {
+      try {
+        const highlighter = await shiki.createHighlighter({
+          themes: [isDarkMode ? "dracula" : "light-plus"],
+          langs: [language || "txt"],
+        });
+
+        let html = highlighter.codeToHtml(code, {
+          lang: language || "txt",
+          theme: isDarkMode ? "dracula" : "light-plus",
+        });
+
+        // Remove background color and add dm mono font
+        html = html.replace(
+          /style="([^"]*)"/,
+          `style="$1; font-family: var(--font-dm-mono), monospace; background-color: transparent;"`,
+        );
+
+        setHighlightedCode(html);
+      } catch (error) {
+        console.error("Error initializing Shiki highlighter:", error);
+        setHighlightedCode(`<pre>${code}</pre>`);
+      }
+    };
+
+    if (isClient) loadHighlighter();
+  }, [code, language, isDarkMode, isClient]);
 
   const handleCopy = async () => {
     if (!isClient) return;
@@ -105,20 +126,12 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     return <LucideCode className="" size={iconSize - 4} />;
   }, [language]);
 
-  // Use isDarkMode state to determine the theme instead of the prop
-  const prismTheme = isDarkMode ? dracula : oneLight;
   const codeLines = code.split("\n");
   const lineNumbers = Array.from({ length: codeLines.length }, (_, i) => i + 1);
 
   return (
-    <figure
-      className={cn(
-        "relative w-full font-dm-mono",
-        dmMono.className,
-        className,
-      )}
-    >
-      <div className={cn("rounded-xl overflow-hidden w-full bg-primary-200")}>
+    <figure className={cn("relative w-full", dmMono.className, className)}>
+      <div className={cn("rounded-lg overflow-hidden w-full bg-primary-200")}>
         {fileName && (
           <figcaption
             className={cn(
@@ -174,33 +187,15 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
               </div>
               <div className="relative flex-1 min-w-0 pt-5 pb-5 pl-0 pr-4">
                 {isClient && (
-                  <SyntaxHighlighter
-                    language={language}
-                    style={prismTheme}
-                    customStyle={{
-                      margin: 0,
-                      padding: 0,
-                      background: "transparent",
-                      fontSize: "inherit",
+                  <div
+                    className="shiki px-4"
+                    style={{
                       fontFamily: "inherit",
+                      fontSize: "inherit",
+                      background: "transparent",
                     }}
-                    codeTagProps={{
-                      style: {
-                        fontFamily: dmMono.className,
-                      },
-                    }}
-                    showLineNumbers={false}
-                    wrapLongLines={true}
-                    lineProps={() => ({
-                      style: {
-                        whiteSpace: "pre-wrap",
-                        minHeight: "1.5em",
-                        marginBottom: 0,
-                      },
-                    })}
-                  >
-                    {code}
-                  </SyntaxHighlighter>
+                    dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                  />
                 )}
               </div>
             </div>

@@ -38,18 +38,16 @@ const Discover: React.FC = () => {
           <Input
             placeholder="Enter country"
             value={country}
-            className="col-span-2"
+            className="md:col-span-2"
             onChange={(e) => setCountry(e.target.value)}
           />
           <Input
             placeholder="Enter city"
             value={city}
-            className="col-span-2"
+            className="md:col-span-2"
             onChange={(e) => setCity(e.target.value)}
           />
-          <Button className="col-span-1" onClick={handleSearch}>
-            Discover
-          </Button>
+          <Button onClick={handleSearch}>Discover</Button>
         </aside>
         {hookEvents.length > 0 ? (
           <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
