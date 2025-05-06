@@ -24,13 +24,9 @@ const Header: FC = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-10 flex justify-center px-6 md:px-8 w-full">
-      {/* Removed 'relative' from this div */}
+    <div className="fixed top-6 left-0 right-0 z-10 flex justify-center px-9 md:px-7 w-full">
       <div className="w-full">
-        <header
-          // Removed 'relative' from the header element
-          className="backdrop-blur-lg bg-primary-200/75 py-3.5 px-4 sm:px-6 rounded-lg flex justify-between items-center"
-        >
+        <header className="backdrop-blur-lg bg-primary-200/75 py-3.5 px-6 rounded-lg flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex gap-2 items-center flex-shrink-0">
             <Image
@@ -40,7 +36,7 @@ const Header: FC = () => {
               alt="Logo"
               src="/logos/header-icon.svg"
             />
-            <span className="font-bold text-base hidden sm:inline">Spot</span>
+            <span className="font-bold text-base hidden md:flex">Spot</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +53,7 @@ const Header: FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex md:hidden items-center justify-center p-1 mr-1 text-primary-400"
+            className="flex md:hidden items-center justify-center text-primary-400"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X size={iconSize} /> : <Menu size={iconSize} />}

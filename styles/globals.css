@@ -3,7 +3,7 @@
 
 /* Themes */
 @theme {
-  /* Primary Colors */
+  /* Primary  Colors */
   --color-primary-100: #dad7cd; /* Pale Sage */
   --color-primary-200: #a3b18a; /* Sage Green */
   --color-primary-300: #588157; /* Moss Green */
@@ -45,7 +45,8 @@
 
   /* Code typography */
   code,
-  pre {
+  pre,
+  .list-item {
     font-family: var(--font-dm-mono) !important;
     @apply text-base md:text-lg;
     @apply text-primary-500 lg:w-3/4;
