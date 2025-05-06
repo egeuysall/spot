@@ -3,8 +3,8 @@ updates:
   - package-ecosystem: "pnpm"
     directory: "/"
     schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
+      interval: "weekly"
+    open-pull-requests-limit: 25
     groups:
       next-core:
         patterns:
