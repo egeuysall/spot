@@ -19,10 +19,10 @@ const Discover: React.FC = () => {
     searchCountry,
   );
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setSearchCity(city);
     setSearchCountry(country);
-  };
+  },[city,country]);
 
   React.useEffect(() => {
     if (searchCity || searchCountry) {
