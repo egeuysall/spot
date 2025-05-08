@@ -22,7 +22,7 @@ const Discover: React.FC = () => {
   const handleSearch = useCallback(() => {
     setSearchCity(city);
     setSearchCountry(country);
-  },[city,country]);
+  }, [city, country]);
 
   React.useEffect(() => {
     if (searchCity || searchCountry) {
