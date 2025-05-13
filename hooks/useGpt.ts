@@ -13,7 +13,7 @@ export const useGpt = (
   city: string = "",
   countryName: string = "United States",
   interests: string[] = [],
-  categories: string[] = []
+  categories: string[] = [],
 ) => {
   const country = getCountryCode(countryName);
   const [events, setEvents] = useState<TicketmasterEvent[]>([]);
@@ -21,56 +21,61 @@ export const useGpt = (
   const [error, setError] = useState<string | null>(null);
 
   // Fetch events with ChatGPT recommendations
-  const fetchEvents = useCallback(async () => {
-    setLoading(true);
-    setError(null);
+  const fetchEvents = useCallback(
+    async (overrideCity?: string) => {
+      setLoading(true);
+      setError(null);
 
-    try {
-      // Step 1: Fetch raw events from Ticketmaster
-      const ticketmasterEvents = await fetchTicketmasterEvents(
-        city,
-        country,
-        categories
-      );
+      const effectiveCity = overrideCity || city;
 
-      if (!ticketmasterEvents || ticketmasterEvents.length === 0) {
-        setError("No events found for your search criteria");
+      try {
+        // Step 1: Fetch raw events from Ticketmaster
+        const ticketmasterEvents = await fetchTicketmasterEvents(
+          effectiveCity,
+          country,
+          categories,
+        );
+
+        if (!ticketmasterEvents || ticketmasterEvents.length === 0) {
+          setError("No events found for your search criteria");
+          setEvents([]);
+          return;
+        }
+
+        // Step 2: Send events to ChatGPT for personalized filtering and recommendations
+        const personalizedEvents = await getPersonalizedEventsFromGPT(
+          ticketmasterEvents,
+          interests,
+          categories,
+          city,
+          countryName,
+        );
+
+        if (personalizedEvents && personalizedEvents.length > 0) {
+          setEvents(personalizedEvents);
+        } else {
+          setEvents(ticketmasterEvents);
+        }
+      } catch (error: any) {
+        console.error(`Error in event discovery process:`, error);
+        setError("Failed to fetch events. Please try again.");
         setEvents([]);
-        return;
+      } finally {
+        setLoading(false);
       }
-
-      // Step 2: Send events to ChatGPT for personalized filtering and recommendations
-      const personalizedEvents = await getPersonalizedEventsFromGPT(
-        ticketmasterEvents,
-        interests,
-        categories,
-        city,
-        countryName
-      );
-
-      if (personalizedEvents && personalizedEvents.length > 0) {
-        setEvents(personalizedEvents);
-      } else {
-        setEvents(ticketmasterEvents);
-      }
-    } catch (error: any) {
-      console.error(`Error in event discovery process:`, error);
-      setError("Failed to fetch events. Please try again.");
-      setEvents([]);
-    } finally {
-      setLoading(false);
-    }
-  }, [city, country, interests, categories]);
+    },
+    [city, country, interests, categories],
+  );
 
   // Fetch events from Ticketmaster API
   const fetchTicketmasterEvents = async (
     city: string,
     countryCode: string,
-    categories: string[]
+    categories: string[],
   ): Promise<TicketmasterEvent[]> => {
-
     try {
       const apiKey = process.env.NEXT_PUBLIC_TICKETMASTER_API_KEY;
+      console.log("API Key:", apiKey); // Debugging line
       if (!apiKey) {
         throw new Error("Ticketmaster API key is missing");
       }
@@ -101,7 +106,7 @@ export const useGpt = (
         for (const category of categories) {
           if (category) {
             const categoryUrl = `${baseUrl}&segmentName=${encodeURIComponent(
-              category
+              category,
             )}`;
             apiCalls.push(categoryUrl);
           }
@@ -139,12 +144,12 @@ export const useGpt = (
                           month: "short",
                           day: "numeric",
                           year: "numeric",
-                        }
+                        },
                       )
                     : "Unknown Date",
                   time: e.dates?.start?.localTime
                     ? new Date(
-                        `1970-01-01T${e.dates.start.localTime}Z`
+                        `1970-01-01T${e.dates.start.localTime}Z`,
                       ).toLocaleTimeString("en-US", {
                         hour: "numeric",
                         minute: "2-digit",
@@ -188,12 +193,11 @@ export const useGpt = (
     interests: string[],
     categories: string[],
     city: string,
-    countryName: string
+    countryName: string,
   ): Promise<TicketmasterEvent[] | null> => {
-
     try {
       const openaiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-
+      console.log("OpenAI API Key:", openaiKey); // Debugging line
       if (!openaiKey) {
         console.error("OpenAI API key is missing");
         return null;
@@ -270,7 +274,7 @@ export const useGpt = (
 
           // Parse the personalized events
           const personalizedEvents = JSON.parse(
-            jsonContent
+            jsonContent,
           ) as TicketmasterEvent[];
 
           if (
@@ -279,7 +283,7 @@ export const useGpt = (
           ) {
             // Ensure all required fields are present
             const validEvents = personalizedEvents.filter(
-              (event) => event.id && event.name && event.date && event.segment
+              (event) => event.id && event.name && event.date && event.segment,
             );
 
             return validEvents;
