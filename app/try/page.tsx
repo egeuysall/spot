@@ -161,6 +161,7 @@ const Discover: React.FC = () => {
 
     if (showWarnings) return;
 
+
     fetchEvents(city);
   };
 
@@ -270,7 +271,8 @@ const Discover: React.FC = () => {
               ? "bg-accent-100"
               : "bg-accent-100 opacity-50"
           }
-        `}
+        }
+
               >
                 {cat.name}
               </button>
