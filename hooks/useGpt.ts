@@ -75,7 +75,7 @@ export const useGpt = (
   ): Promise<TicketmasterEvent[]> => {
     try {
       const apiKey = process.env.NEXT_PUBLIC_TICKETMASTER_API_KEY;
-      
+
       if (!apiKey) {
         throw new Error("Ticketmaster API key is missing");
       }
