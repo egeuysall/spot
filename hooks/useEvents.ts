@@ -12,7 +12,7 @@ const getCountryCode = (countryName: string): string => {
 export const useEvents = (
   segment: string = "everything",
   city: string = "",
-  countryName: string = "United States"
+  countryName: string = "United States",
 ) => {
   const country = getCountryCode(countryName);
   const [events, setEvents] = useState<TicketmasterEvent[]>([]);
@@ -24,7 +24,7 @@ export const useEvents = (
           segment !== "everything" ? `&segmentName=${segment}` : ""
         }${city ? `&city=${city}` : ""}&apikey=${
           process.env.NEXT_PUBLIC_TICKETMASTER_API_KEY
-        }`
+        }`,
       );
 
       if (!res.ok) {
@@ -50,7 +50,7 @@ export const useEvents = (
             : "Unknown Date",
           time: e.dates.start.localTime
             ? new Date(
-                `1970-01-01T${e.dates.start.localTime}Z`
+                `1970-01-01T${e.dates.start.localTime}Z`,
               ).toLocaleTimeString("en-US", {
                 hour: "numeric",
                 minute: "2-digit",
@@ -72,7 +72,7 @@ export const useEvents = (
       // Sort events by date
       mapped.sort(
         (a: { date: string }, b: { date: string }) =>
-          new Date(a.date).getTime() - new Date(b.date).getTime()
+          new Date(a.date).getTime() - new Date(b.date).getTime(),
       );
 
       setEvents(mapped || []);
