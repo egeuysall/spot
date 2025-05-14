@@ -169,7 +169,7 @@ const Discover: React.FC = () => {
     if (showWarnings) return;
 
     // If just showing warnings but still have some input, proceed anyway
-    fetchEvents();
+    fetchEvents(city);
   };
 
   return (
@@ -306,7 +306,7 @@ const Discover: React.FC = () => {
                 onChange={(e) => setCountry(e.target.value)}
               />
               <Input
-                placeholder="Enter city (e.g., New York)"
+                placeholder="Enter city (e.g., Los Angeles)"
                 value={city}
                 className="md:col-span-2"
                 onChange={(e) => setCity(e.target.value)}
