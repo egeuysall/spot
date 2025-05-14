@@ -34,17 +34,20 @@
 To set up the Spot project locally, follow these steps:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/egeuysall/spot.git
    cd spot
    ```
 
 2. Install dependencies using **pnpm**:
+
    ```bash
    pnpm install
    ```
 
 3. Start the development server:
+
    ```bash
    pnpm dev
    ```
@@ -79,6 +82,7 @@ Spot is built with a focus on simplicity and performance. To start contributing,
 - Before submitting pull requests, ensure all code is linted and formatted.
 
 To run tests:
+
 ```bash
 pnpm lint
 ```

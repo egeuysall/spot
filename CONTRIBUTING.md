@@ -18,6 +18,7 @@ First off, thanks for your interest in contributing to **Spot** — your support
 ## Branch Naming
 
 Use descriptive branch names:
+
 ```
 feature/event-filter
 fix/api-timeout
@@ -33,6 +34,7 @@ refactor/card-component
 ## Commit Messages
 
 Follow the conventional format:
+
 ```
 feat: add personalized event feed
 fix: correct timezone offset in API call
@@ -40,12 +42,12 @@ fix: correct timezone offset in API call
 
 ## What You Can Help With
 
-- UI/UX improvements  
-- Integrating new event APIs  
-- Optimizing performance  
-- Writing tests  
-- Improving accessibility  
-- Localizing UI text  
+- UI/UX improvements
+- Integrating new event APIs
+- Optimizing performance
+- Writing tests
+- Improving accessibility
+- Localizing UI text
 
 ---
 
