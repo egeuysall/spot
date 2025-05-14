@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useCallback } from "react";
 import { EventCard } from "@/components/ui/EventCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,10 @@ const Discover: React.FC = () => {
     searchCountry,
   );
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     setSearchCity(city);
     setSearchCountry(country);
-  };
+  }, [city, country]);
 
   React.useEffect(() => {
     if (searchCity || searchCountry) {
