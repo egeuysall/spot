@@ -75,7 +75,7 @@ export const useGpt = (
   ): Promise<TicketmasterEvent[]> => {
     try {
       const apiKey = process.env.NEXT_PUBLIC_TICKETMASTER_API_KEY;
-      console.log("API Key:", apiKey); // Debugging line
+      
       if (!apiKey) {
         throw new Error("Ticketmaster API key is missing");
       }
@@ -197,7 +197,6 @@ export const useGpt = (
   ): Promise<TicketmasterEvent[] | null> => {
     try {
       const openaiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-      console.log("OpenAI API Key:", openaiKey); // Debugging line
       if (!openaiKey) {
         console.error("OpenAI API key is missing");
         return null;
