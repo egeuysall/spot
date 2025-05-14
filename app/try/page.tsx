@@ -161,6 +161,7 @@ const Discover: React.FC = () => {
 
     if (showWarnings) return;
 
+
     fetchEvents(city);
   };
 
@@ -220,6 +221,7 @@ const Discover: React.FC = () => {
                   <X size={iconSize - 10} className="text-secondary-200" />
                 </button>
               </div>
+
             ))}
           </div>
         ) : (
@@ -271,6 +273,8 @@ const Discover: React.FC = () => {
               : "bg-accent-100 opacity-50"
           }
         `}
+
+        
               >
                 {cat.name}
               </button>

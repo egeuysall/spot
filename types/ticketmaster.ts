@@ -11,7 +11,9 @@ export type TicketmasterEvent = {
     min: number | null;
     max: number | null;
     currency: string;
-  }>;
+
+
+  }>,
   city: string;
   venue: string;
-};
+}
