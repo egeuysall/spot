@@ -72,8 +72,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       zod:
-        specifier: ^3.24.3
-        version: 3.24.3
+        specifier: ^3.25.48
+        version: 3.25.48
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.1
@@ -2699,8 +2699,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.24.3:
-    resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
+  zod@3.25.48:
+    resolution: {integrity: sha512-0X1mz8FtgEIvaxGjdIImYpZEaZMrund9pGXm3M6vM7Reba0e2eI71KPjSCGXBfwKDPwPoywf6waUKc3/tFvX2Q==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -2945,8 +2945,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.24.3
-      zod-to-json-schema: 3.24.5(zod@3.24.3)
+      zod: 3.25.48
+      zod-to-json-schema: 3.24.5(zod@3.25.48)
     transitivePeerDependencies:
       - supports-color
 
@@ -4001,7 +4001,7 @@ snapshots:
       minimatch: 3.1.2
       natural-compare: 1.4.0
       optionator: 0.9.4
-      zod: 3.24.3
+      zod: 3.25.48
     optionalDependencies:
       jiti: 2.4.2
     transitivePeerDependencies:
@@ -5820,10 +5820,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.24.5(zod@3.24.3):
+  zod-to-json-schema@3.24.5(zod@3.25.48):
     dependencies:
-      zod: 3.24.3
+      zod: 3.25.48
 
-  zod@3.24.3: {}
+  zod@3.25.48: {}
 
   zwitch@2.0.4: {}

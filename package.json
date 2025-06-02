@@ -31,7 +31,7 @@
     "shiki": "^3.4.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.3.0",
-    "zod": "^3.24.3"
+    "zod": "^3.25.48"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
